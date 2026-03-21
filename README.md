@@ -1,6 +1,9 @@
 Personal Finance Planner
 A responsive budget tracking web app built with vanilla HTML, CSS, and JavaScript. Track your monthly expenses by category, set a budget, and get real-time spending insights — all without any frameworks or dependencies.
 
+live link
+https://personal-finance-planner-xi.vercel.app/
+
 Features
 
 Monthly budget setting — Set a budget for each month separately
