@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: hsla(0, 0%, 50%, 0.199);
+}
+
+/* ================= HEADER ================= */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: hsl(0, 0%, 100%);
+  margin-bottom: 30px;
+  font-weight: bolder;
+  color: rgba(47, 47, 109, 0.658);
+  margin: 0;
+}
+
+.mylabel {
+  font-size: 20px;
+  color: rgba(11, 125, 170, 0.822);
+  font-weight: bold;
+}
+
+#mymonth {
+  border: none;
+  font-size: 1rem;
+}
+/* ================= TOP STATS ================= */
+.top-stats-row {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.stat-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ FIX: Shared sizing for both the Input and the P tags */
+.stat-card input, 
+.stat-card .amount {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  font-size: 1.8rem; /* Matches your budget input size */
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.stat-card input {
+  color: hsla(120, 100%, 25%, 0.7);
+}
+
+.stat-card input:focus {
+  border-bottom: 2px solid #3498db;
+}
+
+/* Specific Colors for each status */
+.amountTS {
+  color: hsla(0, 100%, 50%, 0.678);
+}
+
+.amountRB {
+  color: hsla(240, 100%, 50%, 0.719);
+}
+
+/* ================= BREAKDOWN ================= */
+.breakdown-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+
+/* ✅ FIX: Proper left-right alignment */
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.breakdown-item span:first-child {
+  font-weight: 600;
+}
+
+.breakdown-item span:last-child {
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* ================= WARNING ================= */
+.warningDiv {
+  display: none;
+  padding: 10px;
+  text-align: center;
+  background-color: hsla(0, 100%, 50%, 0.308);
+  border-radius: 10px;
+  margin: 10px;
+  color: red;
+}
+
+/* ================= ADD EXPENSE ================= */
+.add-Expense-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.add-Expense-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.input-row input,
+.input-row select {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.95rem;
+}
+
+#addExpenseBtn {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#addExpenseBtn:hover {
+  background-color: #2980b9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .input-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= RECENT EXPENSES ================= */
+.recent-expense-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.recent-expense-headings {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 2fr 1fr 1fr;
+  gap: 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.recent-expense-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.recent-expense-container {
+  display: grid;
+  gap: 10px;
+}
+
+.recent-expense-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 2fr 1fr 1fr;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.clear-all-btn {
+  background: #eee;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.clear-all-btn:hover {
+  background: #e0e0e0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.action-buttons button {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.action-buttons button:hover {
+  background-color: #f8f9fa;
+  border-color: #3498db;
+  transform: translateY(-2px);
+}

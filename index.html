@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<header class="dashboard-header">
+  <h1>Budget Tracker</h1>
+  <div class="month-selector">
+    <label for="mymonth">Select month:</label>
+    <input type="month" id="mymonth" value="2026-01" />
+  </div>
+</header>
+
+<!-- TOP STATS -->
+<div class="top-stats-row">
+  <div class="stat-card">
+    <label>Budget Amount</label>
+    <input type="number" id="budgetInput" placeholder="0.00" />
+  </div>
+
+  <div class="stat-card">
+    <label>Total Spent</label>
+    <p class="amount amountTS">$0.00</p>
+  </div>
+
+  <div class="stat-card">
+    <label>Remaining Balance</label>
+    <p class="amount amountRB">$0.00</p>
+  </div>
+</div>
+
+<!-- BREAKDOWN -->
+<div class="breakdown-card">
+  <h3>Spending Breakdown</h3>
+  <div id="breakdownContainer"></div>
+</div>
+
+<!-- WARNING -->
+<div class="warningDiv"></div>
+
+<!-- ADD EXPENSE -->
+<div class="add-Expense-card">
+  <h2>Add Expense</h2>
+
+  <div class="input-row">
+    <input type="number" id="amountInput" placeholder="Amount" />
+    <select id="categoryInput">
+      <option value="">Select</option>
+      <option value="Food">Food</option>
+      <option value="Rent">Rent</option>
+      <option value="Utilities">Utilities</option>
+      <option value="Travel">Travel</option>
+      <option value="Others">Others</option>
+    </select>
+    <input type="date" id="dateInput" />
+    <input type="text" id="noteInput" placeholder="Note" />
+  </div>
+
+  <button id="addExpenseBtn">+ Add Expense</button>
+</div>
+
+<!-- RECENT EXPENSES -->
+<div class="recent-expense-card">
+  <div class="recent-expense-header">
+    <h2>Recent Expenses</h2>
+    <button class="clear-all-btn">Clear All</button>
+  </div>
+
+  <div class="recent-expense-headings">
+    <span>Date</span>
+    <span>Category</span>
+    <span>Note</span>
+    <span>Amount</span>
+    <span>Actions</span>
+  </div>
+
+  <div id="recentExpenseContainer"></div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
