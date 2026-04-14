@@ -37,6 +37,7 @@ body {
   display: flex;
   gap: 20px;
   padding: 20px;
+  
 }
 
 .stat-card {
@@ -61,11 +62,12 @@ body {
   outline: none;
   background: transparent;
   text-align: center;
-  font-size: 1.8rem; /* Matches your budget input size */
+  font-size: 1.8rem;
   font-weight: bold;
   margin-top: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.4;
 }
-
 .stat-card input {
   color: hsla(120, 100%, 25%, 0.7);
 }

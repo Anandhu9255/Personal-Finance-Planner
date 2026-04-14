@@ -111,8 +111,8 @@ function renderTopStats(monthExpenses) {
   const budget = budgets[selectedMonth] || 0;
   const remaining = budget - total;
 
-  document.querySelector(".amountTS").innerText = `$${total.toFixed(2)}`;
-  document.querySelector(".amountRB").innerText = `$${remaining.toFixed(2)}`;
+  document.querySelector(".amountTS").innerText = `₹${total.toFixed(2)}`;
+  document.querySelector(".amountRB").innerText = `₹${remaining.toFixed(2)}`;
 }
 
 // ---------- BREAKDOWN (BUDGET-BASED %) ----------
@@ -188,23 +188,22 @@ function renderWarning(monthExpenses) {
     totals[e.category] = (totals[e.category] || 0) + e.amount;
   });
 
+  const totalSpent = monthExpenses.reduce((sum, e) => sum + e.amount, 0);
+
   let highestCategory = "";
   let highestPercent = 0;
 
   for (const [cat, amt] of Object.entries(totals)) {
-    const percent = (amt / budget) * 100;
+    const percent = (amt / totalSpent) * 100;
     if (percent > highestPercent) {
       highestPercent = percent;
       highestCategory = cat;
     }
   }
 
-  warningDiv.innerText = `⚠ Highest spending category: ${highestCategory} (${highestPercent.toFixed(
-    0,
-  )}%)`;
+  warningDiv.innerText = `⚠ Highest spending category: ${highestCategory} (${highestPercent.toFixed(0)}%)`;
   warningDiv.style.display = "block";
 }
-
 // ---------- ACTIONS ----------
 function deleteExpense(id) {
   if (!confirm("Delete this expense?")) return;
