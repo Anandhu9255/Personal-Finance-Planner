@@ -146,7 +146,7 @@ function renderBreakdown(monthExpenses) {
     breakdownContainer.innerHTML += `
       <div class="breakdown-item">
         <span>${cat}</span>
-        <span>${percent}%  -  - - - -  $${amt.toFixed(2)}</span>
+        <span>${percent}%  -  - - - -  ₹${amt.toFixed(2)}</span>
       </div>
     `;
   });
@@ -165,7 +165,7 @@ function renderRecentExpenses(monthExpenses) {
         <span>${expense.date}</span>
         <span>${expense.category}</span>
         <span>${expense.note || "-"}</span>
-        <span>$${expense.amount.toFixed(2)}</span>
+        <span>₹${expense.amount.toFixed(2)}</span>
         <div class="action-buttons">
           <button onclick="editExpense(${expense.id})">✏️</button>
           <button onclick="deleteExpense(${expense.id})">🗑️</button>
